@@ -15,6 +15,7 @@
         <module>security-shiro-api</module>
         <module>security-shiro-impl</module>
         <module>security-shiro-exmp</module>
+        <module>security-shiro-redis</module>
     </modules>
 
 
