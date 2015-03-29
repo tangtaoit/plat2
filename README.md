@@ -1,6 +1,6 @@
 # plat2
 相关技术
-osgi
-apache wicket
-apache blueprint
-apache shiro
+osgi<br/>
+apache wicket<br/>
+apache blueprint<br/>
+apache shiro<br/>
