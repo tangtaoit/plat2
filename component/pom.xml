@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>component-wicket-api</module>
+        <module>component-wicket-impl</module>
     </modules>
 
 
