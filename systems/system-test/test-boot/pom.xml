@@ -3,36 +3,66 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>theme</artifactId>
+        <artifactId>system-test</artifactId>
         <groupId>com.tt</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
-    <artifactId>theme-default</artifactId>
+    <artifactId>test-boot</artifactId>
     <packaging>bundle</packaging>
 
+
+    <properties>
+        <osgi.import.package>*,org.apache.shiro.web.servlet,org.apache.shiro.web.env</osgi.import.package>
+    </properties>
     <dependencies>
-        <dependency>
-            <groupId>org.eclipse.osgi</groupId>
-            <artifactId>services</artifactId>
-        </dependency>
 
         <dependency>
-            <groupId>org.eclipse.tycho</groupId>
-            <artifactId>org.eclipse.osgi</artifactId>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-web</artifactId>
         </dependency>
 
-        <!--  WICKET DEPENDENCIES -->
         <dependency>
             <groupId>org.apache.wicket</groupId>
-            <artifactId>wicket-core</artifactId>
+            <artifactId>wicket-util</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.apache.wicket</groupId>
             <artifactId>wicket-extensions</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.tt</groupId>
+            <artifactId>test-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.wicketstuff</groupId>
+            <artifactId>wicketstuff-osgi</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.wicketstuff</groupId>
+            <artifactId>wicketstuff-shiro</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.apache.wicket</groupId>
+            <artifactId>wicket-ioc</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.geronimo.specs</groupId>
+            <artifactId>geronimo-atinject_1.0_spec</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -52,7 +82,7 @@
                         <Bundle-Version>${project.version}</Bundle-Version>
                         <Export-Package>${osgi.export.package}</Export-Package>
                         <Import-Package>${osgi.import.package}</Import-Package>
-                        <Bundle-Activator>com.tt.plat.theme.def.resources.ResoucesRegisterActivator</Bundle-Activator>
+                        <Web-ContextPath>/test</Web-ContextPath>
                     </instructions>
                 </configuration>
             </plugin>

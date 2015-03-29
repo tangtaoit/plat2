@@ -14,6 +14,8 @@
         <module>core</module>
         <module>security</module>
         <module>theme</module>
+        <module>systems</module>
+        <module>karaf</module>
     </modules>
 
 
@@ -171,6 +173,7 @@
 
         <!--apache wicket start-->
         <wicket.version>7.0.0-SNAPSHOT</wicket.version>
+        <wicketstuff.version>7.0-SNAPSHOT</wicketstuff.version>
         <pax.wicket.version>3.0.2</pax.wicket.version>
         <geronimo.inject.version>1.0</geronimo.inject.version>
         <ops4j.base.version>1.4.0</ops4j.base.version>
@@ -203,11 +206,78 @@
         <com.googlecode.wicket-jquery-ui.version>6.18.0</com.googlecode.wicket-jquery-ui.version>
 
         <httpclient.version>4.3.2</httpclient.version>
+
+        <servlet.api.version>3.1.0</servlet.api.version>
     </properties>
 
 
+    <distributionManagement>
+        <snapshotRepository>
+            <id>sonatype-nexus-snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <profiles>
+        <profile>
+            <!-- setup for using oss.sonatype.org to hold snapshots -->
+            <!-- should be active for all sessions except where the release plugin
+                is being used. We keep this in a profile since central sync up requires no
+                <repository> tags at the top level of the POM. -->
+            <id>oss.sonatype.org-snapshots</id>
+
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>sonatype-nexus-snapshots</id>
+                    <name>Sonatype Nexus Snapshots</name>
+                    <url>http://oss.sonatype.org/content/repositories/snapshots</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+        <profile>
+            <id>resolve-oss.sonatype.org-snapshots</id>
+            <activation>
+                <property>
+                    <name>!performRelease</name>
+                </property>
+            </activation>
+            <repositories>
+                <!-- for wicket snapshots -->
+                <repository>
+                    <id>wicket-snapshots</id>
+                    <name>Apache Wicket Snapshots</name>
+                    <url>https://repository.apache.org/content/repositories/snapshots</url>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                </repository>
+
+                <!-- for wicket bootstrap snapshots -->
+                <repository>
+                    <id>sonatype-nexus-snapshots</id>
+                    <name>Sonatype Nexus Snapshots</name>
+                    <url>http://oss.sonatype.org/content/repositories/snapshots</url>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
     <dependencyManagement>
         <dependencies>
+
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${servlet.api.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>com.googlecode.wicket-jquery-ui</groupId>
@@ -292,6 +362,24 @@
             <dependency>
                 <groupId>org.apache.wicket</groupId>
                 <artifactId>wicket-extensions</artifactId>
+                <version>${wicket.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.wicketstuff</groupId>
+                <artifactId>wicketstuff-osgi</artifactId>
+                <version>${wicketstuff.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.wicketstuff</groupId>
+                <artifactId>wicketstuff-shiro</artifactId>
+                <version>${wicketstuff.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.wicket</groupId>
+                <artifactId>wicket-ioc</artifactId>
                 <version>${wicket.version}</version>
             </dependency>
 

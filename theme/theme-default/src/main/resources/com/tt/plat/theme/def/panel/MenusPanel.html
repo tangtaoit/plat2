@@ -1,0 +1,70 @@
+<html xmlns:wicket="http://wicket.apache.org">
+<body>
+<wicket:panel>
+
+    <div id="sidebar" class="sidebar-fixed">
+        <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;">
+            <div id="sidebar-content" style="overflow: hidden; width: auto; height: 100%;">
+                <form class="sidebar-search">
+                    <div class="input-box">
+                        <button type="submit" class="submit"><i class="icon-search"></i></button>
+                        <span> <input type="text" placeholder="Search..."> </span></div>
+                </form>
+                <div class="sidebar-search-results"><i class="icon-remove close"></i>
+
+                    <div class="title"> Documents</div>
+                    <ul class="notifications">
+
+
+                        <li><a href="javascript:void(0);">
+                            <div class="col-left"><span class="label label-info"><i class="icon-file-text"></i></span>
+                            </div>
+                            <div class="col-right with-margin"><span class="message"><strong>John Doe</strong> received $1.527,32</span>
+                                <span class="time">finances.xls</span></div>
+                        </a></li>
+                        <li><a href="javascript:void(0);">
+                            <div class="col-left"><span class="label label-success"><i
+                                    class="icon-file-text"></i></span></div>
+                            <div class="col-right with-margin"><span class="message">My name is <strong>John
+                                Doe</strong> ...</span> <span class="time">briefing.docx</span></div>
+                        </a></li>
+                    </ul>
+                    <div class="title"> Persons</div>
+                    <ul class="notifications">
+                        <li><a href="javascript:void(0);">
+                            <div class="col-left"><span class="label label-danger"><i class="icon-female"></i></span>
+                            </div>
+                            <div class="col-right with-margin"><span class="message">Jane <strong>Doe</strong></span>
+                                <span class="time">21 years old</span></div>
+                        </a></li>
+                    </ul>
+                </div>
+                <ul id="nav">
+                    <!--<li class="current"><a href="index.html"> <i class="icon-dashboard"></i> Ê×Ò³ </a></li>-->
+
+                    <!--<li wicket:id="menusItems" class="stick" style="display: none">-->
+
+                    <!--</li>-->
+
+
+                </ul>
+
+                <!--<div wicket:id="notificationPanel"></div>-->
+                <div class="sidebar-widget align-center">
+                    <div class="btn-group" data-toggle="buttons" id="theme-switcher"><label class="btn active"> <input
+                            type="radio" name="theme-switcher" data-theme="bright"><i class="icon-sun"></i> °×Ìì
+                    </label> <label class="btn"> <input type="radio" name="theme-switcher" data-theme="dark"><i
+                            class="icon-moon"></i> ºÚÒ¹ </label></div>
+                </div>
+                <div class="fill-nav-space"></div>
+            </div>
+            <div class="slimScrollBar"
+                 style="background-color: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; z-index: 99; right: 1px; height: 389.29878048780483px; background-position: initial initial; background-repeat: initial initial;"></div>
+            <div class="slimScrollRail"
+                 style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; background-color: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px; background-position: initial initial; background-repeat: initial initial;"></div>
+        </div>
+        <div id="divider" class="resizeable"></div>
+    </div>
+</wicket:panel>
+</body>
+</html>

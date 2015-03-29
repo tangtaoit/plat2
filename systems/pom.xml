@@ -9,12 +9,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>security</artifactId>
+    <artifactId>systems</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>security-shiro-api</module>
-        <module>security-shiro-impl</module>
-        <module>security-shiro-exmp</module>
+        <module>system-test</module>
     </modules>
 
 

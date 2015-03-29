@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title wicket:id="title">title comes here</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+
+</head>
+<body class="metro">
+
+<!--  头部面板 -->
+<div id="header" wicket:id="header">header</div>
+
+<div id="container" class="fixed-header">
+
+    <!-- 菜单link -->
+    <div wicket:id="menus">menus</div>
+
+    <div id="content">
+        <div class="container">
+            <div  wicket:id="breadCrumbBar">
+                <!--<ul id="breadcrumbs" class="breadcrumb">-->
+                    <!--<li><i class="icon-home"></i> <a href="/">首页</a></li>-->
+                    <!--<li class="current"><a href="pages_calendar.html" title="">dfasf</a></li>-->
+                <!--</ul>-->
+            </div>
+            <wicket:child/>
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>
