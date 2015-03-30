@@ -119,6 +119,7 @@
         <commonsLangVersion>2.6</commonsLangVersion>
         <commonsLang3Version>3.1</commonsLang3Version>
         <commonsPoolVersion>1.6</commonsPoolVersion>
+        <commons.pool2.version>2.3</commons.pool2.version>
         <servicemixBundlesSerpVersion>1.14.1_1</servicemixBundlesSerpVersion>
         <servicemixBundlesCglibVersion>2.1_3_4</servicemixBundlesCglibVersion>
 
@@ -208,6 +209,8 @@
         <httpclient.version>4.3.2</httpclient.version>
 
         <servlet.api.version>3.1.0</servlet.api.version>
+
+        <jedis.version>2.4.2</jedis.version>
     </properties>
 
 
@@ -749,6 +752,13 @@
                 <artifactId>commons-pool</artifactId>
                 <version>${commonsPoolVersion}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>${commons.pool2.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>commons-collections</groupId>
                 <artifactId>commons-collections</artifactId>
@@ -1113,6 +1123,14 @@
                 <version>${wicket.version}</version>
                 <scope>provided</scope>
             </dependency>
+
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>${jedis.version}</version>
+            </dependency>
+
+
 
 
         </dependencies>

@@ -13,9 +13,26 @@
 
 
     <properties>
-        <osgi.import.package>*,org.apache.shiro.web.servlet,org.apache.shiro.web.env</osgi.import.package>
+        <osgi.import.package>*,
+            org.apache.shiro.web.servlet,
+            org.apache.shiro.web.env,
+            com.tt.plat.security.shiro.redis,
+            org.apache.shiro.web.session.mgt,
+            org.apache.commons.pool2.impl
+        </osgi.import.package>
     </properties>
     <dependencies>
+
+        <dependency>
+            <groupId>org.apache.aries.proxy</groupId>
+            <artifactId>org.apache.aries.proxy</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.tt</groupId>
+            <artifactId>security-shiro-redis</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
         <dependency>
             <groupId>org.apache.shiro</groupId>

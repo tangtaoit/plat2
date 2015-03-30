@@ -120,6 +120,11 @@
 
 
 
+    <!-- redis的客户端 -->
+    <feature name="redisclient" version="${jedis.version}">
+        <bundle>wrap:mvn:redis.clients/jedis/${jedis.version}</bundle>
+    </feature>
+
 
 
     <!-- plat平台的运行环境 -->
@@ -147,6 +152,7 @@
         <bundle>mvn:commons-codec/commons-codec/1.8</bundle>
         <bundle start-level="85">mvn:commons-io/commons-io/2.2</bundle>
         <bundle start-level="85">mvn:commons-fileupload/commons-fileupload/1.3.1</bundle>
+        <bundle>mvn:org.apache.commons/commons-pool2/${commons.pool2.version}</bundle>
 
         <bundle start-level="85">wrap:mvn:org.jdom/jdom/2.0.2</bundle>
 
@@ -155,6 +161,8 @@
         <feature>cometed</feature>
 
         <bundle>mvn:commons-beanutils/commons-beanutils/1.9.2</bundle>
+
+        <feature>redisclient</feature>
 
     </feature>
 

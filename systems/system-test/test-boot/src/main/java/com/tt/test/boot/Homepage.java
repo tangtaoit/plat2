@@ -16,6 +16,7 @@ public class Homepage extends BasePage {
 
         super();
 
+
         TestPanel testPanel = new TestPanel("test",getBreadCrumbBar());
         add(testPanel);
 
