@@ -30,6 +30,7 @@ public class RedisManager {
 	 * 初始化方法
 	 */
 	public void init(){
+		System.out.println("--------------------------------------dd");
 		if(jedisPool == null){
 			if(password != null && !"".equals(password)){
 				jedisPool = new JedisPool(new JedisPoolConfig(), host, port, timeout, password);
