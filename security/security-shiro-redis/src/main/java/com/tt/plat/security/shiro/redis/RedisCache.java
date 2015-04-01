@@ -1,5 +1,6 @@
 package com.tt.plat.security.shiro.redis;
 
+import com.tt.plat.core.utils.SerializeUtils;
 import org.apache.shiro.cache.Cache;
 import org.apache.shiro.cache.CacheException;
 import org.apache.shiro.util.CollectionUtils;

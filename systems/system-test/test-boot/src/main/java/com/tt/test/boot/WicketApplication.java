@@ -16,13 +16,14 @@
 package com.tt.test.boot;
 
 import org.apache.wicket.Page;
+import org.apache.wicket.mock.MockApplication;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.wicketstuff.osgi.OsgiClassResolver;
 import org.wicketstuff.osgi.inject.OsgiComponentInjector;
 import org.wicketstuff.shiro.annotation.AnnotationsShiroAuthorizationStrategy;
 import org.wicketstuff.shiro.authz.ShiroUnauthorizedComponentListener;
 
-public class WicketApplication extends WebApplication
+public class WicketApplication extends MockApplication
 {
 //    public WicketApplication() {
 //        getDebugSettings().setAjaxDebugModeEnabled(true);

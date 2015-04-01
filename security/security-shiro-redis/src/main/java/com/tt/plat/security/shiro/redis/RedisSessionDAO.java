@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.tt.plat.core.utils.SerializeUtils;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.session.UnknownSessionException;
 import org.apache.shiro.session.mgt.eis.AbstractSessionDAO;
@@ -59,11 +60,10 @@ public class RedisSessionDAO extends AbstractSessionDAO {
 	@Override
 	public Collection<Session> getActiveSessions() {
 		Set<Session> sessions = new HashSet<Session>();
-		
 		Set<byte[]> keys = redisManager.keys(this.keyPrefix + "*");
 		if(keys != null && keys.size()>0){
 			for(byte[] key:keys){
-				Session s = (Session)SerializeUtils.deserialize(redisManager.get(key));
+				Session s = (Session) SerializeUtils.deserialize(redisManager.get(key));
 				sessions.add(s);
 			}
 		}

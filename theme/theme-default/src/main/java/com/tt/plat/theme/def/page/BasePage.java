@@ -31,9 +31,9 @@ public abstract class BasePage extends WebPage{
     public BasePage(){
         add(new Label("title", new PropertyModel<String>(this, "pageTitle")));
 
-        add(new HeaderPanel("header"));
+        add(new HeaderPanel("header").setRenderBodyOnly(true));
 
-        add(new MenusPanel("menus"));
+        add(new MenusPanel("menus").setRenderBodyOnly(true));
 
         breadCrumbBar = new PBreadCrumbBar("breadCrumbBar");
         add(breadCrumbBar);

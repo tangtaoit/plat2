@@ -214,65 +214,65 @@
     </properties>
 
 
-    <distributionManagement>
-        <snapshotRepository>
-            <id>sonatype-nexus-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
+    <!--<distributionManagement>-->
+        <!--<snapshotRepository>-->
+            <!--<id>sonatype-nexus-snapshots</id>-->
+            <!--<url>https://oss.sonatype.org/content/repositories/snapshots/</url>-->
+        <!--</snapshotRepository>-->
+    <!--</distributionManagement>-->
 
-    <profiles>
-        <profile>
-            <!-- setup for using oss.sonatype.org to hold snapshots -->
-            <!-- should be active for all sessions except where the release plugin
-                is being used. We keep this in a profile since central sync up requires no
-                <repository> tags at the top level of the POM. -->
-            <id>oss.sonatype.org-snapshots</id>
+    <!--<profiles>-->
+        <!--<profile>-->
+            <!--&lt;!&ndash; setup for using oss.sonatype.org to hold snapshots &ndash;&gt;-->
+            <!--&lt;!&ndash; should be active for all sessions except where the release plugin-->
+                <!--is being used. We keep this in a profile since central sync up requires no-->
+                <!--<repository> tags at the top level of the POM. &ndash;&gt;-->
+            <!--<id>oss.sonatype.org-snapshots</id>-->
 
-            <distributionManagement>
-                <snapshotRepository>
-                    <id>sonatype-nexus-snapshots</id>
-                    <name>Sonatype Nexus Snapshots</name>
-                    <url>http://oss.sonatype.org/content/repositories/snapshots</url>
-                </snapshotRepository>
-            </distributionManagement>
-        </profile>
-        <profile>
-            <id>resolve-oss.sonatype.org-snapshots</id>
-            <activation>
-                <property>
-                    <name>!performRelease</name>
-                </property>
-            </activation>
-            <repositories>
-                <!-- for wicket snapshots -->
-                <repository>
-                    <id>wicket-snapshots</id>
-                    <name>Apache Wicket Snapshots</name>
-                    <url>https://repository.apache.org/content/repositories/snapshots</url>
-                    <snapshots>
-                        <enabled>true</enabled>
-                    </snapshots>
-                    <releases>
-                        <enabled>false</enabled>
-                    </releases>
-                </repository>
+            <!--<distributionManagement>-->
+                <!--<snapshotRepository>-->
+                    <!--<id>sonatype-nexus-snapshots</id>-->
+                    <!--<name>Sonatype Nexus Snapshots</name>-->
+                    <!--<url>http://oss.sonatype.org/content/repositories/snapshots</url>-->
+                <!--</snapshotRepository>-->
+            <!--</distributionManagement>-->
+        <!--</profile>-->
+        <!--<profile>-->
+            <!--<id>resolve-oss.sonatype.org-snapshots</id>-->
+            <!--<activation>-->
+                <!--<property>-->
+                    <!--<name>!performRelease</name>-->
+                <!--</property>-->
+            <!--</activation>-->
+            <!--<repositories>-->
+                <!--&lt;!&ndash; for wicket snapshots &ndash;&gt;-->
+                <!--<repository>-->
+                    <!--<id>wicket-snapshots</id>-->
+                    <!--<name>Apache Wicket Snapshots</name>-->
+                    <!--<url>https://repository.apache.org/content/repositories/snapshots</url>-->
+                    <!--<snapshots>-->
+                        <!--<enabled>true</enabled>-->
+                    <!--</snapshots>-->
+                    <!--<releases>-->
+                        <!--<enabled>false</enabled>-->
+                    <!--</releases>-->
+                <!--</repository>-->
 
-                <!-- for wicket bootstrap snapshots -->
-                <repository>
-                    <id>sonatype-nexus-snapshots</id>
-                    <name>Sonatype Nexus Snapshots</name>
-                    <url>http://oss.sonatype.org/content/repositories/snapshots</url>
-                    <snapshots>
-                        <enabled>true</enabled>
-                    </snapshots>
-                    <releases>
-                        <enabled>false</enabled>
-                    </releases>
-                </repository>
-            </repositories>
-        </profile>
-    </profiles>
+                <!--&lt;!&ndash; for wicket bootstrap snapshots &ndash;&gt;-->
+                <!--<repository>-->
+                    <!--<id>sonatype-nexus-snapshots</id>-->
+                    <!--<name>Sonatype Nexus Snapshots</name>-->
+                    <!--<url>http://oss.sonatype.org/content/repositories/snapshots</url>-->
+                    <!--<snapshots>-->
+                        <!--<enabled>true</enabled>-->
+                    <!--</snapshots>-->
+                    <!--<releases>-->
+                        <!--<enabled>false</enabled>-->
+                    <!--</releases>-->
+                <!--</repository>-->
+            <!--</repositories>-->
+        <!--</profile>-->
+    <!--</profiles>-->
     <dependencyManagement>
         <dependencies>
 

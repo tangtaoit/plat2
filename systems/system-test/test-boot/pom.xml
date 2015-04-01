@@ -18,7 +18,8 @@
             org.apache.shiro.web.env,
             com.tt.plat.security.shiro.redis,
             org.apache.shiro.web.session.mgt,
-            org.apache.commons.pool2.impl
+            org.apache.commons.pool2.impl,
+            org.apache.wicket.protocol.http
         </osgi.import.package>
     </properties>
     <dependencies>

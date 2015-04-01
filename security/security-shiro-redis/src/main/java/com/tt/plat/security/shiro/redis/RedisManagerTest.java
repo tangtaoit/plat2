@@ -1,6 +1,8 @@
 package com.tt.plat.security.shiro.redis;
 
 
+import com.tt.plat.core.utils.SerializeUtils;
+
 public class RedisManagerTest {
 	
 	
