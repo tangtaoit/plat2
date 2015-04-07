@@ -7,12 +7,22 @@
   <!--<wicket:application id="applicationId" class="com.tt.test.boot.WicketApplication"-->
     <!--applicationName="mixed" mountPoint="mixed" />-->
 
-    <bean id="wicketApplication" class="com.tt.test.boot.WicketApplication"/>
+    <!--<bean id="wicketApplication" class="com.tt.test.boot.WicketApplication"/>-->
 
-    <service ref="wicketApplication" auto-export="class-hierarchy">
+    <!--<service ref="wicketApplication" auto-export="class-hierarchy">-->
+        <!--<service-properties>-->
+            <!--<entry key="wicket.osgi.application.name" value="test"/>-->
+        <!--</service-properties>-->
+    <!--</service>-->
+
+    <service interface="org.ops4j.pax.wicket.api.WebApplicationFactory">
         <service-properties>
-            <entry key="wicket.osgi.application.name" value="test"/>
+            <entry key="pax.wicket.applicationname" value="plat.snk.test"/>
+            <entry key="pax.wicket.mountpoint" value="/test"/>
         </service-properties>
+        <bean class="org.ops4j.pax.wicket.api.support.SimpleWebApplicationFactory">
+            <property name="wicketApplication" value="com.tt.test.boot.WicketApplication"/>
+        </bean>
     </service>
 
 

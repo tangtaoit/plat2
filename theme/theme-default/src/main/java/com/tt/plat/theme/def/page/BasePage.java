@@ -1,21 +1,26 @@
 package com.tt.plat.theme.def.page;
 
+import com.tt.plat.theme.def.NavomaticBorder;
 import com.tt.plat.theme.def.panel.HeaderPanel;
 import com.tt.plat.theme.def.panel.MenusPanel;
 import com.tt.plat.theme.def.panel.PBreadCrumbBar;
+import org.apache.wicket.MarkupContainer;
 import org.apache.wicket.extensions.breadcrumb.BreadCrumbBar;
 import org.apache.wicket.markup.head.CssHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.border.Border;
 import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.resource.JQueryResourceReference;
+
+import java.io.Serializable;
 
 /**
  * Created by tao on 2015/3/29.
  */
-public abstract class BasePage extends WebPage{
+public abstract class BasePage extends WebPage implements Serializable {
 
     /**
      * 页面标题
@@ -28,15 +33,21 @@ public abstract class BasePage extends WebPage{
 
 
 
+
     public BasePage(){
+        breadCrumbBar = new PBreadCrumbBar("breadCrumbBar");
+        add(breadCrumbBar);
+
         add(new Label("title", new PropertyModel<String>(this, "pageTitle")));
 
         add(new HeaderPanel("header").setRenderBodyOnly(true));
 
         add(new MenusPanel("menus").setRenderBodyOnly(true));
 
-        breadCrumbBar = new PBreadCrumbBar("breadCrumbBar");
-        add(breadCrumbBar);
+//        navomaticBorder =new NavomaticBorder("plat");
+//        super.add(navomaticBorder);
+
+
     }
 
 

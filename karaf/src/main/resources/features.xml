@@ -26,24 +26,24 @@
         <bundle>mvn:mysql/mysql-connector-java/5.1.18</bundle>
     </feature>
 
-    <feature name="openjpa" version="2.3.1">
-        <feature>transaction</feature>
-        <feature>jpa</feature>
-        <feature>jndi</feature>
-        <feature>mysql-driver</feature>
-        <feature>derby-driver</feature>
-        <feature>aries-annotation</feature>
-        <bundle>mvn:org.apache.commons/commons-lang3/3.1</bundle>
-        <bundle>mvn:commons-lang/commons-lang/2.6</bundle>
-        <bundle>mvn:commons-pool/commons-pool/1.6</bundle>
-        <bundle>mvn:com.google.guava/guava/15.0</bundle>
-        <bundle>mvn:org.apache.geronimo.specs/geronimo-servlet_2.5_spec/1.2</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-dbcp/1.4_3</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.serp/1.14.1_1</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-collections/3.2.1_3</bundle>
-        <bundle>mvn:org.apache.xbean/xbean-asm4-shaded/3.16</bundle>
-        <bundle>mvn:org.apache.openjpa/openjpa/2.3.0</bundle>
-    </feature>
+    <!--<feature name="openjpa" version="2.3.1">-->
+        <!--<feature>transaction</feature>-->
+        <!--<feature>jpa</feature>-->
+        <!--<feature>jndi</feature>-->
+        <!--<feature>mysql-driver</feature>-->
+        <!--<feature>derby-driver</feature>-->
+        <!--&lt;!&ndash;<feature>aries-annotation</feature>&ndash;&gt;-->
+        <!--<bundle>mvn:org.apache.commons/commons-lang3/3.1</bundle>-->
+        <!--<bundle>mvn:commons-lang/commons-lang/2.6</bundle>-->
+        <!--<bundle>mvn:commons-pool/commons-pool/1.6</bundle>-->
+        <!--<bundle>mvn:com.google.guava/guava/15.0</bundle>-->
+        <!--<bundle>mvn:org.apache.geronimo.specs/geronimo-servlet_2.5_spec/1.2</bundle>-->
+        <!--<bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-dbcp/1.4_3</bundle>-->
+        <!--<bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.serp/1.14.1_1</bundle>-->
+        <!--<bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-collections/3.2.1_3</bundle>-->
+        <!--<bundle>mvn:org.apache.xbean/xbean-asm4-shaded/3.16</bundle>-->
+        <!--<bundle>mvn:org.apache.openjpa/openjpa/2.3.0</bundle>-->
+    <!--</feature>-->
 
 
     <feature name="wicket" version="${wicket.version}">
@@ -58,9 +58,10 @@
         <!--<bundle>mvn:org.apache.wicket/wicket-bean-validation/${wicket.version}</bundle>-->
     </feature>
 
+
     <feature name="wicketstuff" version="${wicketstuff.version}">
-        <bundle>mvn:org.wicketstuff/wicketstuff-shiro/${wicketstuff.version}</bundle>
-        <bundle>mvn:org.wicketstuff/wicketstuff-osgi/${wicketstuff.version}</bundle>
+        <bundle>wrap:mvn:org.wicketstuff/wicketstuff-shiro/${wicketstuff.version}</bundle>
+        <!--<bundle>mvn:org.wicketstuff/wicketstuff-osgi/${wicketstuff.version}</bundle>-->
     </feature>
 
     <feature name="pax-wicket" version="${pax.wicket.version}">
@@ -68,10 +69,10 @@
         <feature>eventadmin</feature>
         <bundle>mvn:org.ops4j.base/ops4j-base/1.4.0</bundle>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-atinject_1.0_spec/1.0</bundle>
-        <!--<bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.aopalliance/1.0_6</bundle>-->
-        <!--<bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.cglib/${cglib.version}</bundle>-->
-        <!--<bundle>mvn:org.ops4j.pax.wicket/org.ops4j.pax.wicket.service/${pax.wicket.version}</bundle>-->
-        <!--<bundle>mvn:org.ops4j.pax.wicket.spi/org.ops4j.pax.wicket.spi.blueprint/${pax.wicket.version}</bundle>-->
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.aopalliance/1.0_6</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.cglib/${cglib.version}</bundle>
+        <bundle>mvn:org.ops4j.pax.wicket/org.ops4j.pax.wicket.service/${pax.wicket.version}</bundle>
+        <bundle>mvn:org.ops4j.pax.wicket.spi/org.ops4j.pax.wicket.spi.blueprint/${pax.wicket.version}</bundle>
     </feature>
 
 
@@ -125,6 +126,10 @@
         <bundle>wrap:mvn:redis.clients/jedis/${jedis.version}</bundle>
     </feature>
 
+    <feature name="mongodb" version="${mongodb.version}">
+        <bundle dependency="true">mvn:org.mongodb/mongo-java-driver/${mongodb.version}</bundle>
+    </feature>
+
 
 
     <!-- plat平台的运行环境 -->
@@ -163,6 +168,8 @@
         <bundle>mvn:commons-beanutils/commons-beanutils/1.9.2</bundle>
 
         <feature>redisclient</feature>
+
+        <feature>mongodb</feature>
 
     </feature>
 

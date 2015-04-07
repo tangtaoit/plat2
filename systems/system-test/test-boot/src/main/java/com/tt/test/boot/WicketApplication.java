@@ -17,9 +17,6 @@ package com.tt.test.boot;
 
 import org.apache.wicket.Page;
 import org.apache.wicket.mock.MockApplication;
-import org.apache.wicket.protocol.http.WebApplication;
-import org.wicketstuff.osgi.OsgiClassResolver;
-import org.wicketstuff.osgi.inject.OsgiComponentInjector;
 import org.wicketstuff.shiro.annotation.AnnotationsShiroAuthorizationStrategy;
 import org.wicketstuff.shiro.authz.ShiroUnauthorizedComponentListener;
 
@@ -37,22 +34,15 @@ public class WicketApplication extends MockApplication
 
         getDebugSettings().setAjaxDebugModeEnabled(true);
 
+
         // Configure Shiro
-        AnnotationsShiroAuthorizationStrategy authz = new AnnotationsShiroAuthorizationStrategy();
-        getSecuritySettings().setAuthorizationStrategy(authz);
-        getSecuritySettings().setUnauthorizedComponentInstantiationListener(
-                new ShiroUnauthorizedComponentListener(LoginPage.class, UnauthorizedPage.class, authz));
+//        AnnotationsShiroAuthorizationStrategy authz = new AnnotationsShiroAuthorizationStrategy();
+//        getSecuritySettings().setAuthorizationStrategy(authz);
+//        getSecuritySettings().setUnauthorizedComponentInstantiationListener(
+//                new ShiroUnauthorizedComponentListener(LoginPage.class, UnauthorizedPage.class, authz));
 
 
-        mountPage("account/login", LoginPage.class);
-
-        getComponentInstantiationListeners().add(new OsgiComponentInjector());
-
-
-		/*
-		 * Not really needed, at least on Jetty.
-		 */
-        getApplicationSettings().setClassResolver(new OsgiClassResolver());
+       // mountPage("account/login", LoginPage.class);
     }
 
     @Override

@@ -1,0 +1,16 @@
+<blueprint
+        xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+        xmlns:jpa="http://aries.apache.org/xmlns/jpa/v1.1.0"
+        xmlns:tx="http://aries.apache.org/xmlns/transactions/v1.0.0">
+
+
+    <!-- 监听菜单模板 -->
+    <reference-list
+                    interface="com.tt.plat.core.web.api.IPageModule" availability="optional" >
+        <reference-listener bind-method="bind" unbind-method="unbind">
+            <bean class="com.tt.plat.core.web.impl.listener.ModuleListener"/>
+        </reference-listener>
+    </reference-list>
+
+
+</blueprint>

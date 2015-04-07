@@ -12,11 +12,13 @@
     <modules>
         <module>core-api</module>
         <module>core-impl</module>
-        <module>core-wicket-api</module>
-        <module>core-wicket-impl</module>
         <module>core-utils</module>
         <module>core-redis-api</module>
         <module>core-redis-impl</module>
+        <module>core-mongodb-api</module>
+        <module>core-mongodb-impl</module>
+        <module>core-web-api</module>
+        <module>core-web-impl</module>
     </modules>
     <modelVersion>4.0.0</modelVersion>
 

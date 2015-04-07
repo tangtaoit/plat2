@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>system-snk-assist</artifactId>
+        <groupId>com.tt</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>snk-assist-boot</artifactId>
+    <packaging>bundle</packaging>
+
+    <properties>
+        <osgi.import.package>*
+        </osgi.import.package>
+    </properties>
+
+
+    <dependencies>
+
+
+        <dependency>
+            <groupId>org.wicketstuff</groupId>
+            <artifactId>wicketstuff-shiro</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.tt</groupId>
+            <artifactId>snk-assist-core</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+
+
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.wicket</groupId>
+            <artifactId>wicket-util</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.wicket</groupId>
+            <artifactId>wicket-extensions</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.apache.wicket</groupId>
+            <artifactId>wicket-ioc</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.geronimo.specs</groupId>
+            <artifactId>geronimo-atinject_1.0_spec</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!--  bundle 插件-->
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <obrRepository>NONE</obrRepository>
+                    <excludeDependencies>true</excludeDependencies>
+                    <instructions>
+                        <Bundle-Name>${project.artifactId}-${project.version}</Bundle-Name>
+                        <Bundle-SymbolicName>${project.artifactId}-${project.version}</Bundle-SymbolicName>
+                        <Bundle-Description>${project.description}</Bundle-Description>
+                        <Bundle-Version>${project.version}</Bundle-Version>
+                        <Export-Package>${osgi.export.package}</Export-Package>
+                        <Import-Package>${osgi.import.package}</Import-Package>
+                        <Web-ContextPath>/assist</Web-ContextPath>
+                    </instructions>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+</project>

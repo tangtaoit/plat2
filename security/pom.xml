@@ -12,8 +12,6 @@
     <artifactId>security</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>security-shiro-api</module>
-        <module>security-shiro-impl</module>
         <module>security-shiro-redis</module>
     </modules>
 

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+
+    <wicket:panel>
+
+        <!-- The template to display files available for upload -->
+        <script id="template-upload" type="text/x-tmpl">
+           {% for (var i=0, file; file=o.files[i]; i++) { %}
+              <tr  class="template-upload fade" style="float:left;padding-right:4px;">
+              <td class="preview"><span class="fade"></span>
+              </td>
+              </tr>
+               {% if (file.error) { %}
+                <tr class="error" colspan="2"><span class="label label-important">Error</span> {%=file.error%}</tr>
+                {% } %}
+            {% } %}
+        </script>
+
+    </wicket:panel>
+
+</html>

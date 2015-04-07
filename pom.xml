@@ -16,6 +16,7 @@
         <module>theme</module>
         <module>systems</module>
         <module>karaf</module>
+        <module>pool</module>
     </modules>
 
 
@@ -173,14 +174,14 @@
         <!-- vaadin end-->
 
         <!--apache wicket start-->
-        <wicket.version>7.0.0-M5</wicket.version>
-        <wicketstuff.version>7.0.0-M5</wicketstuff.version>
+        <wicket.version>6.18.0</wicket.version>
+        <wicketstuff.version>6.18.0</wicketstuff.version>
         <pax.wicket.version>3.0.2</pax.wicket.version>
         <geronimo.inject.version>1.0</geronimo.inject.version>
         <ops4j.base.version>1.4.0</ops4j.base.version>
-        <cglib.version>2.2.2_1</cglib.version>
+        <cglib.version>2.2_2</cglib.version>
         <aopalliance.version>1.0_6</aopalliance.version>
-        <cglib.range>[2,3)</cglib.range>
+        <cglib.range>[2,4)</cglib.range>
         <!--apache wicket end-->
 
         <!--<karaf.path>D:/myJavaTools/apache-karaf-3.0.0/deploy</karaf.path>-->
@@ -211,6 +212,8 @@
         <servlet.api.version>3.1.0</servlet.api.version>
 
         <jedis.version>2.4.2</jedis.version>
+
+        <mongodb.version>3.0.0</mongodb.version>
     </properties>
 
 
@@ -275,6 +278,12 @@
     </profiles>
     <dependencyManagement>
         <dependencies>
+
+            <dependency>
+                <groupId>org.mongodb</groupId>
+                <artifactId>mongo-java-driver</artifactId>
+                <version>${mongodb.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>javax.servlet</groupId>

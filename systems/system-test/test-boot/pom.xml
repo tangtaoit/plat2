@@ -13,13 +13,28 @@
 
 
     <properties>
-        <osgi.import.package>*,
-            org.apache.shiro.web.servlet,
-            org.apache.shiro.web.env,
-            com.tt.plat.security.shiro.redis,
-            org.apache.shiro.web.session.mgt,
-            org.apache.commons.pool2.impl,
-            org.apache.wicket.protocol.http
+        <osgi.import.package>net.sf.cglib.proxy,
+            net.sf.cglib.core,
+            net.sf.cglib.util,
+            net.sf.cglib.reflect,
+            net.sf.cglib.asm,
+            org.apache.wicket.settings,
+            org.apache.wicket.protocol.http,
+            javax.servlet,
+            javax.servlet.http,
+            org.apache.wicket.request,
+            org.apache.wicket.request.mapper,
+            org.apache.wicket.request.http,
+            org.apache.wicket.request.resource,
+            org.apache.wicket.request.cycle,
+            org.apache.wicket.core.request,
+            org.apache.wicket.core.request.mapper,
+            org.apache.wicket.page,
+            org.apache.wicket.util,
+            org.apache.wicket.ajax,
+            org.apache.wicket.event,
+            org.apache.wicket.markup.html,
+            *
         </osgi.import.package>
     </properties>
     <dependencies>
@@ -60,10 +75,7 @@
             <version>${project.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.wicketstuff</groupId>
-            <artifactId>wicketstuff-osgi</artifactId>
-        </dependency>
+
 
         <dependency>
             <groupId>org.wicketstuff</groupId>
@@ -79,6 +91,12 @@
         <dependency>
             <groupId>org.apache.geronimo.specs</groupId>
             <artifactId>geronimo-atinject_1.0_spec</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-client</artifactId>
+            <version>5.11.1</version>
         </dependency>
 
     </dependencies>
@@ -100,7 +118,6 @@
                         <Bundle-Version>${project.version}</Bundle-Version>
                         <Export-Package>${osgi.export.package}</Export-Package>
                         <Import-Package>${osgi.import.package}</Import-Package>
-                        <Web-ContextPath>/test</Web-ContextPath>
                     </instructions>
                 </configuration>
             </plugin>
