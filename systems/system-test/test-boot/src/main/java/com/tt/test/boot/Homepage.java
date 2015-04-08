@@ -2,6 +2,7 @@ package com.tt.test.boot;
 
 
 import com.tt.plat.theme.def.page.BasePage;
+import org.apache.wicket.extensions.breadcrumb.panel.BreadCrumbPanelLink;
 
 /**
  * Created by tao on 2015/3/29.
@@ -15,10 +16,10 @@ public class Homepage extends BasePage {
 
 
 
-//        TestPanel testPanel = new TestPanel("test",getBreadCrumbBar());
-//        add(testPanel);
-//
-//        getBreadCrumbBar().setActive(testPanel);
+        TestPanel testPanel = new TestPanel("test",getBreadCrumbBar());
+        add(testPanel);
+
+        getBreadCrumbBar().setActive(testPanel);
     }
 
 //    public static void main(String[] args) throws JMSException, InterruptedException {

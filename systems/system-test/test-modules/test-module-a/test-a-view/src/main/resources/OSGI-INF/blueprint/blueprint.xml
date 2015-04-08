@@ -1,0 +1,29 @@
+<blueprint
+        xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+        xmlns:jpa="http://aries.apache.org/xmlns/jpa/v1.1.0"
+        xmlns:tx="http://aries.apache.org/xmlns/transactions/v1.0.0">
+
+
+
+
+    <!-- 发布测试目录 -->
+    <service interface="com.tt.plat.core.web.api.IPageModule">
+        <bean class="com.tt.plat.core.web.api.DefaultModule">
+            <property name="name" value="测试目录"></property>
+            <property name="flag" value="test_dir"></property>
+            <property name="target" value="plat.snk.test"></property>
+        </bean>
+    </service>
+
+    <!-- 发布菜单 -->
+    <service interface="com.tt.plat.core.web.api.IPageModule">
+        <bean class="com.tt.plat.core.web.api.DefaultModule">
+            <property name="name" value="测试下"></property>
+            <property name="pageClass" value="com.tt.plat.test.a.view.TestPage"></property>
+            <property name="flag" value="test"></property>
+            <property name="target" value="test_dir"></property>
+        </bean>
+    </service>
+
+
+</blueprint>

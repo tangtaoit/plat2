@@ -144,7 +144,8 @@ public class ItemPanel extends Panel {
      */
     private boolean isDirectory(IModule module) {
 
-        if (module.getTargets() == null || module.getTargets().length < 0) { //如果没有targets 那么认为是目录
+        IPageModule pageModule = (IPageModule) module;
+        if (pageModule.getPageClass() == null) { //如果没有targets 那么认为是目录
 
             return true;
         }
