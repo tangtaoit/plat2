@@ -25,6 +25,20 @@ public class DefaultModule implements IPageModule{
 
     private String[] targets;
 
+    public DefaultModule(){
+
+    }
+
+
+    public DefaultModule(String name, String flag) {
+        this.name = name;
+        this.flag = flag;
+    }
+
+    public DefaultModule(String name) {
+        this.name = name;
+    }
+
     private Class<? extends Page> pageClass;
 
     @Override
@@ -101,5 +115,25 @@ public class DefaultModule implements IPageModule{
     public Class<? extends Page> getPageClass() {
 
         return pageClass;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        DefaultModule that = (DefaultModule) o;
+
+        if (flag != null ? !flag.equals(that.flag) : that.flag != null) return false;
+        if (no != null ? !no.equals(that.no) : that.no != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = no != null ? no.hashCode() : 0;
+        result = 31 * result + (flag != null ? flag.hashCode() : 0);
+        return result;
     }
 }

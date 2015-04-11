@@ -1,0 +1,186 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.tree-theme-plat .nav > div{
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.tree-theme-plat .nav .open{
+    border-bottom: none;
+}
+.tree-theme-plat div.tree-subtree {
+    list-style: none;
+    clear: both;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    background: #f1f1f1;
+    border-bottom: 1px solid #fff;
+}
+
+.tree-theme-plat div.tree-node .tree-content a{
+    display: block;
+    position: relative;
+    margin: 0;
+    border: 0;
+    padding: 15px 15px;
+    padding-left: 20px;
+    color: #555555;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #fff;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.tree-theme-plat .tree-subtree div.tree-node .tree-content a{
+    font-weight: normal;
+    padding: 12px 15px 12px 20px;
+    text-transform: none;
+    text-decoration: none;
+}
+
+.tree-theme-plat div.tree-branch {
+    /*margin: 0px;*/
+    /*padding: 0px;*/
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-bottom: 1px solid #ebebeb;
+}
+
+/*.tree-theme-plat div.tree-branch-mid {*/
+    /*background-position: -54px center;*/
+    /*background-repeat: repeat-y;*/
+/*}*/
+
+/*.tree-theme-plat div.tree-branch-last {*/
+/*}*/
+
+/* node */
+
+.tree-theme-plat span.tree-junction {
+    display: block;
+    float: left;
+    width: 18px;
+    background-position: -36px center;
+    background-repeat: no-repeat;
+}
+
+.tree-theme-plat a.tree-junction-expanded {
+    display: block;
+    float: left;
+    width: 18px;
+    background-position: -18px center;
+    background-repeat: no-repeat;
+    text-decoration: none;
+}
+
+.tree-theme-plat a.tree-junction-collapsed {
+    display: block;
+    float: left;
+    width: 18px;
+    background-position: 0px center;
+    background-repeat: no-repeat;
+    text-decoration: none;
+}
+
+.tree-theme-plat span.tree-content a{
+    display: block;
+    position: relative;
+    margin: 0;
+    border: 0;
+    padding: 15px 15px;
+    padding-left: 20px;
+    color: #555555;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #fff;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.tree-theme-plat span.tree-content a i{
+    color: #6f6f6f;
+    padding-right: 10px;
+    float: left;
+    line-height: 20px;
+}
+
+.tree-theme-plat span.tree-content a i.arrow{
+    line-height: 20px;
+    position: absolute;
+    right: 10px;
+}
+
+
+/* tabletree */
+
+.tree-theme-plat table {
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+
+.tree-theme-plat tr.selected {
+    background-color: #0000ee;
+    color: #FFFFFF;
+}
+
+.tree-theme-plat td {
+    /* allow tree divs to fill complete td (regretfully height 100% on divs does not work) */
+    margin: 0px;
+    padding: 0px;
+}
+
+/* content */
+
+.tree-theme-plat span.tree-content a {
+    color: black;
+    text-decoration: none;
+}
+
+/*.tree-theme-plat span.tree-content a:hover {*/
+    /*text-decoration: underline;*/
+/*}*/
+
+.tree-theme-plat span.tree-content .selected span.tree-label {
+    background-color: #0000ee;
+    color: #FFFFFF;
+}
+
+.tree-theme-plat .tree-folder-closed {
+    padding-left: 18px;
+    background-position: 0px 50%;
+    background-repeat: no-repeat;
+}
+
+.tree-theme-plat .tree-folder-open {
+    padding-left: 18px;
+    background-position: 0px 50%;
+    background-repeat: no-repeat;
+}
+
+.tree-theme-plat .tree-folder-other {
+    padding-left: 18px;
+    background-position: 0px 50%;
+    background-repeat: no-repeat;
+}

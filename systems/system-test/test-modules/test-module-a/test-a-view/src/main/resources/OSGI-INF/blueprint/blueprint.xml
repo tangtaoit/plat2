@@ -26,4 +26,54 @@
     </service>
 
 
+    <!-- 发布测试目录 -->
+    <service interface="com.tt.plat.core.web.api.IPageModule">
+        <bean class="com.tt.plat.core.web.api.DefaultModule">
+            <property name="name" value="测试目录2"></property>
+            <property name="flag" value="test_dir2"></property>
+            <property name="target" value="plat.snk.test"></property>
+        </bean>
+    </service>
+
+    <!-- 发布菜单 -->
+    <service interface="com.tt.plat.core.web.api.IPageModule">
+        <bean class="com.tt.plat.core.web.api.DefaultModule">
+            <property name="name" value="测试2-1"></property>
+            <property name="pageClass" value="com.tt.plat.test.a.view.TestPage"></property>
+            <property name="flag" value="test2-1"></property>
+            <property name="target" value="test_dir2"></property>
+        </bean>
+    </service>
+
+    <!-- 发布菜单 -->
+    <service interface="com.tt.plat.core.web.api.IPageModule">
+        <bean class="com.tt.plat.core.web.api.DefaultModule">
+            <property name="name" value="测试2-2"></property>
+            <property name="pageClass" value="com.tt.plat.test.a.view.TestPage"></property>
+            <property name="flag" value="test2-2"></property>
+            <property name="target" value="test_dir2"></property>
+        </bean>
+    </service>
+
+
+    <!-- 发布测试目录 -->
+    <service interface="com.tt.plat.core.web.api.IPageModule">
+        <bean class="com.tt.plat.core.web.api.DefaultModule">
+            <property name="name" value="测试目录3"></property>
+            <property name="flag" value="test_dir3"></property>
+            <property name="target" value="test_dir2"></property>
+        </bean>
+    </service>
+
+    <!-- 发布菜单 -->
+    <service interface="com.tt.plat.core.web.api.IPageModule">
+        <bean class="com.tt.plat.core.web.api.DefaultModule">
+            <property name="name" value="测试3-1"></property>
+            <property name="pageClass" value="com.tt.plat.test.a.view.TestPage"></property>
+            <property name="flag" value="test3-1"></property>
+            <property name="target" value="test_dir3"></property>
+        </bean>
+    </service>
+
+
 </blueprint>

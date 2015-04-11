@@ -1,19 +1,15 @@
 package com.tt.plat.theme.def.page;
 
-import com.tt.plat.theme.def.NavomaticBorder;
 import com.tt.plat.theme.def.panel.HeaderPanel;
 import com.tt.plat.theme.def.panel.MenusPanel;
 import com.tt.plat.theme.def.panel.PBreadCrumbBar;
-import org.apache.wicket.MarkupContainer;
 import org.apache.wicket.extensions.breadcrumb.BreadCrumbBar;
 import org.apache.wicket.markup.head.CssHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.markup.html.border.Border;
 import org.apache.wicket.model.PropertyModel;
-import org.apache.wicket.resource.JQueryResourceReference;
 
 import java.io.Serializable;
 

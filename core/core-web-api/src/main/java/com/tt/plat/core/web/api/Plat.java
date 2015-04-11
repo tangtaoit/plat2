@@ -15,10 +15,18 @@ public class Plat {
 
     private List<IModule> modules = new ArrayList<>();
 
-    private ModuleNode moduleNode = null;
+    private static ModuleNode moduleNode = null;
 
     public static Plat getInstall() {
         if (install == null) {
+
+            /**
+             * 设置一个根父类节点
+             */
+            moduleNode = new ModuleNode();
+            ModuleNode childModuleNode = new ModuleNode();
+            childModuleNode.setModule(new DefaultModule("plat", "plat.snk.test"));
+            moduleNode.addChild(childModuleNode);
 
             install = new Plat();
         }
@@ -32,6 +40,8 @@ public class Plat {
 
     public void add(IModule module) {
         modules.add(module);
+
+        set2(moduleNode);
     }
 
     public void remove(IModule module) {
@@ -40,80 +50,87 @@ public class Plat {
     }
 
 
+    private void set2(ModuleNode moduleNode){
+
+       List<ModuleNode> moduleNodes =    moduleNode.getChilds();
+
+        if(moduleNodes!=null&&moduleNodes.size()>0){
+            for(ModuleNode md:moduleNodes){
+                set(md);
+
+                set2(md);
+            }
+        }
+    }
+
     private void set(ModuleNode moduleNode) {
 
-       IModule module = moduleNode.getModule();
+        IModule module = moduleNode.getModule();
 
-       String flag =  module.getFlag();
+        /**
+         * 获取到target
+         */
+        String flag = module.getFlag();
+        if (flag != null) {
+            List<IModule> tempModuleList = new ArrayList<>();
+            tempModuleList.addAll(modules);
+                for (IModule m : tempModuleList) {
+                    String[] targets = m.getTargets();
+                    for(String target:targets){
+                        if (flag.equals(target)) {//找到目标节点
 
-        List<IModule> moduleList  =new ArrayList<>();
-        moduleList.addAll(modules);
-
-        for(IModule m:moduleList){
-
-            for(String target:m.getTargets()){
-                if(target.equals(flag)){
-                    ModuleNode childModuleNode = new ModuleNode();
-                    childModuleNode.setModule(m);
-                    childModuleNode.setParent(moduleNode);
-
-                    moduleNode.addChild(childModuleNode);
-
-                    modules.remove(m);
-
-                }
-            }
-
-        }
-
-
-        moduleList  =new ArrayList<>();
-        moduleList.addAll(modules);
-       String[] targets = module.getTargets();
-        if(targets!=null){
-            for(IModule m:moduleList){
-               String f = m.getFlag();
-
-                for(String target:targets){
-                    if(target.equals(f)){
-                        ModuleNode parentModuleNode = new ModuleNode();
-                        parentModuleNode.setModule(m);
-
-                        parentModuleNode.addChild(moduleNode);
-
-                        moduleNode.setParent(parentModuleNode);
-
-                        modules.remove(m);
+                            modules.remove(m);
+                            //创建子节点
+                            ModuleNode cnode = new ModuleNode();
+                            cnode.setModule(m);
+                            //设置父节点
+                            cnode.setParent(moduleNode);
+                            //添加子节点
+                            moduleNode.addChild(cnode);
+                            //继续搜索子节点的目标节点
+                            set(cnode);
+                        }
                     }
+
                 }
-            }
         }
 
     }
 
 
-    public List<IModule> findModule(String... flags) {
-        List<IModule> smodules = new ArrayList<IModule>();
+    public ModuleNode getModuleNodeByFlag(String flag){
+
+        List<ModuleNode> moduleNodes =  moduleNode.getChilds();
+        if(moduleNodes!=null&&moduleNodes.size()>0){
 
 
-        for (IModule module : modules) {
-            for (String flag : flags) {
-
-                String[] targets = module.getTargets();
-                if (targets != null && targets.length > 0) {
-
-                    for (String target : targets) {
-
-                        if (flag.equals(target)) {
-                            smodules.add(module);
-                        }
-                    }
-
-                }
-
-            }
+            return findModuleNode(moduleNodes.get(0).getChilds(),flag);
         }
-        return smodules;
+        return null;
+    }
+
+    public ModuleNode findModuleNode(List<ModuleNode> moduleNodes,String flag){
+
+        if(moduleNodes!=null&&moduleNodes.size()>0){
+           for(ModuleNode node:moduleNodes){
+
+               IModule md = node.getModule();
+               String cflag = md.getFlag();
+               if(flag.equals(cflag)){
+
+                   return node;
+               }
+
+               ModuleNode temp = findModuleNode(node.getChilds(), flag);
+               if (temp != null)
+               {
+                   return temp;
+               }
+
+           }
+        }
+
+        return null;
     }
 
     /**
@@ -121,10 +138,15 @@ public class Plat {
      *
      * @return
      */
-    public List<IModule> getCurrMenus() {
-        String applicationKey = WebApplication.get().getApplicationKey();
+    public ModuleNode getCurrMenus() {
+      //  String applicationKey = WebApplication.get().getApplicationKey();
 
-        return findModule(applicationKey);
+       List<ModuleNode> moduleNodes =  moduleNode.getChilds();
+        if(moduleNodes!=null&&moduleNodes.size()>0){
+
+            return moduleNodes.get(0);
+        }
+        return null;
     }
 
 
