@@ -3,6 +3,7 @@ package com.tt.test.boot;
 import com.tt.plat.theme.def.panel.BasePanel;
 import com.tt.test.boot.tree.BookmarkableFolderContent;
 import com.tt.test.boot.tree.Foo;
+import com.tt.test.boot.tree.FooExpansionModel;
 import com.tt.test.boot.tree.FooProvider;
 import org.apache.wicket.Component;
 import org.apache.wicket.extensions.markup.html.repeater.tree.DefaultNestedTree;
@@ -19,7 +20,7 @@ public class TestPanel extends BasePanel{
     public TestPanel(String id, org.apache.wicket.extensions.breadcrumb.IBreadCrumbModel breadCrumbModel) {
         super(id, breadCrumbModel);
 
-        add(new DefaultNestedTree<Foo>("tree", new FooProvider())
+        add(new DefaultNestedTree<Foo>("tree", new FooProvider(),new FooExpansionModel())
         {
 
             /**

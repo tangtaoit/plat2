@@ -5,6 +5,7 @@ import com.tt.plat.core.web.api.IModule;
 import com.tt.plat.core.web.api.ModuleNode;
 import com.tt.plat.core.web.api.Plat;
 import com.tt.plat.theme.def.tree.BookmarkableFolderContent;
+import com.tt.plat.theme.def.tree.ModuleExpansionModel;
 import com.tt.plat.theme.def.tree.PDefaultNestedTree;
 import com.tt.plat.theme.def.tree.TreeProvider;
 import org.apache.shiro.SecurityUtils;
@@ -36,7 +37,7 @@ public class MenusPanel extends Panel {
          */
       //  ModuleNode moduleNode = Plat.getInstall().getCurrMenus();
 
-        add(new PDefaultNestedTree("tree",new TreeProvider()));
+        add(new PDefaultNestedTree("tree",new TreeProvider(),new ModuleExpansionModel()));
 
 //        RepeatingView listItems = new RepeatingView("menusItems");
 //

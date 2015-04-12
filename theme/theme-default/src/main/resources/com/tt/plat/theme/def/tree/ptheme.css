@@ -16,12 +16,14 @@
  */
 
 .tree-theme-plat .nav > div{
-    display: block;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    border-bottom: 1px solid #ebebeb;
+    /*display: block;*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+    /*border: 0;*/
+    /*border-bottom: 1px solid #ebebeb;*/
 }
+
+
 
 .tree-theme-plat .nav .open{
     border-bottom: none;
@@ -33,8 +35,23 @@
     padding: 0;
     font-size: 13px;
     background: #f1f1f1;
-    border-bottom: 1px solid #fff;
+    /*border-bottom: 1px solid #fff;*/
 }
+
+
+.tree-theme-plat .tree-node{
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.tree-theme-plat .tree-subtree .tree-subtree .tree-node{
+    border-left: 1px solid #d1d1d1;
+    border-bottom: none;
+}
+
 
 .tree-theme-plat div.tree-node .tree-content a{
     display: block;
@@ -56,7 +73,31 @@
     padding: 12px 15px 12px 20px;
     text-transform: none;
     text-decoration: none;
+
+
 }
+
+.tree-theme-plat .tree-subtree > div:first-child{
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4) inset;
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4) inset;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4) inset;
+}
+
+.tree-theme-plat .tree-subtree .tree-subtree > div:first-child{
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.tree-theme-plat .tree-subtree .tree-subtree{
+    margin-right: 0;
+    margin-left: 40px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border: none;
+}
+
 
 .tree-theme-plat div.tree-branch {
     /*margin: 0px;*/
@@ -157,10 +198,9 @@
     color: black;
     text-decoration: none;
 }
-
-/*.tree-theme-plat span.tree-content a:hover {*/
-    /*text-decoration: underline;*/
-/*}*/
+.tree-theme-plat span.tree-content a:hover {
+    background: #ebebeb;
+}
 
 .tree-theme-plat span.tree-content .selected span.tree-label {
     background-color: #0000ee;
